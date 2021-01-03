@@ -77,9 +77,22 @@ include CMakeFiles/monitor.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/monitor.dir/flags.make
 
+CMakeFiles/monitor.dir/src/cpu_usage_reader.cpp.o: CMakeFiles/monitor.dir/flags.make
+CMakeFiles/monitor.dir/src/cpu_usage_reader.cpp.o: ../src/cpu_usage_reader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/romainbastien/UdacityProjects/C++/CppND-System-Monitor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/monitor.dir/src/cpu_usage_reader.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/monitor.dir/src/cpu_usage_reader.cpp.o -c /Users/romainbastien/UdacityProjects/C++/CppND-System-Monitor/src/cpu_usage_reader.cpp
+
+CMakeFiles/monitor.dir/src/cpu_usage_reader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/monitor.dir/src/cpu_usage_reader.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/romainbastien/UdacityProjects/C++/CppND-System-Monitor/src/cpu_usage_reader.cpp > CMakeFiles/monitor.dir/src/cpu_usage_reader.cpp.i
+
+CMakeFiles/monitor.dir/src/cpu_usage_reader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/monitor.dir/src/cpu_usage_reader.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/romainbastien/UdacityProjects/C++/CppND-System-Monitor/src/cpu_usage_reader.cpp -o CMakeFiles/monitor.dir/src/cpu_usage_reader.cpp.s
+
 CMakeFiles/monitor.dir/src/format.cpp.o: CMakeFiles/monitor.dir/flags.make
 CMakeFiles/monitor.dir/src/format.cpp.o: ../src/format.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/romainbastien/UdacityProjects/C++/CppND-System-Monitor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/monitor.dir/src/format.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/romainbastien/UdacityProjects/C++/CppND-System-Monitor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/monitor.dir/src/format.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/monitor.dir/src/format.cpp.o -c /Users/romainbastien/UdacityProjects/C++/CppND-System-Monitor/src/format.cpp
 
 CMakeFiles/monitor.dir/src/format.cpp.i: cmake_force
@@ -92,7 +105,7 @@ CMakeFiles/monitor.dir/src/format.cpp.s: cmake_force
 
 CMakeFiles/monitor.dir/src/linux_parser.cpp.o: CMakeFiles/monitor.dir/flags.make
 CMakeFiles/monitor.dir/src/linux_parser.cpp.o: ../src/linux_parser.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/romainbastien/UdacityProjects/C++/CppND-System-Monitor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/monitor.dir/src/linux_parser.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/romainbastien/UdacityProjects/C++/CppND-System-Monitor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/monitor.dir/src/linux_parser.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/monitor.dir/src/linux_parser.cpp.o -c /Users/romainbastien/UdacityProjects/C++/CppND-System-Monitor/src/linux_parser.cpp
 
 CMakeFiles/monitor.dir/src/linux_parser.cpp.i: cmake_force
@@ -105,7 +118,7 @@ CMakeFiles/monitor.dir/src/linux_parser.cpp.s: cmake_force
 
 CMakeFiles/monitor.dir/src/main.cpp.o: CMakeFiles/monitor.dir/flags.make
 CMakeFiles/monitor.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/romainbastien/UdacityProjects/C++/CppND-System-Monitor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/monitor.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/romainbastien/UdacityProjects/C++/CppND-System-Monitor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/monitor.dir/src/main.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/monitor.dir/src/main.cpp.o -c /Users/romainbastien/UdacityProjects/C++/CppND-System-Monitor/src/main.cpp
 
 CMakeFiles/monitor.dir/src/main.cpp.i: cmake_force
@@ -118,7 +131,7 @@ CMakeFiles/monitor.dir/src/main.cpp.s: cmake_force
 
 CMakeFiles/monitor.dir/src/ncurses_display.cpp.o: CMakeFiles/monitor.dir/flags.make
 CMakeFiles/monitor.dir/src/ncurses_display.cpp.o: ../src/ncurses_display.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/romainbastien/UdacityProjects/C++/CppND-System-Monitor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/monitor.dir/src/ncurses_display.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/romainbastien/UdacityProjects/C++/CppND-System-Monitor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/monitor.dir/src/ncurses_display.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/monitor.dir/src/ncurses_display.cpp.o -c /Users/romainbastien/UdacityProjects/C++/CppND-System-Monitor/src/ncurses_display.cpp
 
 CMakeFiles/monitor.dir/src/ncurses_display.cpp.i: cmake_force
@@ -131,7 +144,7 @@ CMakeFiles/monitor.dir/src/ncurses_display.cpp.s: cmake_force
 
 CMakeFiles/monitor.dir/src/process.cpp.o: CMakeFiles/monitor.dir/flags.make
 CMakeFiles/monitor.dir/src/process.cpp.o: ../src/process.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/romainbastien/UdacityProjects/C++/CppND-System-Monitor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/monitor.dir/src/process.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/romainbastien/UdacityProjects/C++/CppND-System-Monitor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/monitor.dir/src/process.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/monitor.dir/src/process.cpp.o -c /Users/romainbastien/UdacityProjects/C++/CppND-System-Monitor/src/process.cpp
 
 CMakeFiles/monitor.dir/src/process.cpp.i: cmake_force
@@ -144,7 +157,7 @@ CMakeFiles/monitor.dir/src/process.cpp.s: cmake_force
 
 CMakeFiles/monitor.dir/src/processor.cpp.o: CMakeFiles/monitor.dir/flags.make
 CMakeFiles/monitor.dir/src/processor.cpp.o: ../src/processor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/romainbastien/UdacityProjects/C++/CppND-System-Monitor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/monitor.dir/src/processor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/romainbastien/UdacityProjects/C++/CppND-System-Monitor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/monitor.dir/src/processor.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/monitor.dir/src/processor.cpp.o -c /Users/romainbastien/UdacityProjects/C++/CppND-System-Monitor/src/processor.cpp
 
 CMakeFiles/monitor.dir/src/processor.cpp.i: cmake_force
@@ -157,7 +170,7 @@ CMakeFiles/monitor.dir/src/processor.cpp.s: cmake_force
 
 CMakeFiles/monitor.dir/src/system.cpp.o: CMakeFiles/monitor.dir/flags.make
 CMakeFiles/monitor.dir/src/system.cpp.o: ../src/system.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/romainbastien/UdacityProjects/C++/CppND-System-Monitor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/monitor.dir/src/system.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/romainbastien/UdacityProjects/C++/CppND-System-Monitor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/monitor.dir/src/system.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/monitor.dir/src/system.cpp.o -c /Users/romainbastien/UdacityProjects/C++/CppND-System-Monitor/src/system.cpp
 
 CMakeFiles/monitor.dir/src/system.cpp.i: cmake_force
@@ -170,6 +183,7 @@ CMakeFiles/monitor.dir/src/system.cpp.s: cmake_force
 
 # Object files for target monitor
 monitor_OBJECTS = \
+"CMakeFiles/monitor.dir/src/cpu_usage_reader.cpp.o" \
 "CMakeFiles/monitor.dir/src/format.cpp.o" \
 "CMakeFiles/monitor.dir/src/linux_parser.cpp.o" \
 "CMakeFiles/monitor.dir/src/main.cpp.o" \
@@ -181,6 +195,7 @@ monitor_OBJECTS = \
 # External object files for target monitor
 monitor_EXTERNAL_OBJECTS =
 
+monitor: CMakeFiles/monitor.dir/src/cpu_usage_reader.cpp.o
 monitor: CMakeFiles/monitor.dir/src/format.cpp.o
 monitor: CMakeFiles/monitor.dir/src/linux_parser.cpp.o
 monitor: CMakeFiles/monitor.dir/src/main.cpp.o
@@ -192,7 +207,7 @@ monitor: CMakeFiles/monitor.dir/build.make
 monitor: /usr/lib/libcurses.dylib
 monitor: /usr/lib/libform.dylib
 monitor: CMakeFiles/monitor.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/romainbastien/UdacityProjects/C++/CppND-System-Monitor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable monitor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/romainbastien/UdacityProjects/C++/CppND-System-Monitor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable monitor"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/monitor.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

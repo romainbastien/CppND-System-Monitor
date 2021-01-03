@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/monitor.dir/src/cpu_usage_reader.cpp.o"
   "CMakeFiles/monitor.dir/src/format.cpp.o"
   "CMakeFiles/monitor.dir/src/linux_parser.cpp.o"
   "CMakeFiles/monitor.dir/src/main.cpp.o"

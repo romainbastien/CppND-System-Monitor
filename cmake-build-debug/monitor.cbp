@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/romainbastien/UdacityProjects/C++/CppND-System-Monitor/include/cpu_usage_reader.h">
+			<Option target="monitor"/>
+		</Unit>
+		<Unit filename="/Users/romainbastien/UdacityProjects/C++/CppND-System-Monitor/src/cpu_usage_reader.cpp">
+			<Option target="monitor"/>
+		</Unit>
 		<Unit filename="/Users/romainbastien/UdacityProjects/C++/CppND-System-Monitor/src/format.cpp">
 			<Option target="monitor"/>
 		</Unit>

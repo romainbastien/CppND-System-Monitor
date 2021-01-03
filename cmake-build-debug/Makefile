@@ -143,6 +143,33 @@ monitor/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/monitor.dir/build.make CMakeFiles/monitor.dir/build
 .PHONY : monitor/fast
 
+src/cpu_usage_reader.o: src/cpu_usage_reader.cpp.o
+
+.PHONY : src/cpu_usage_reader.o
+
+# target to build an object file
+src/cpu_usage_reader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/monitor.dir/build.make CMakeFiles/monitor.dir/src/cpu_usage_reader.cpp.o
+.PHONY : src/cpu_usage_reader.cpp.o
+
+src/cpu_usage_reader.i: src/cpu_usage_reader.cpp.i
+
+.PHONY : src/cpu_usage_reader.i
+
+# target to preprocess a source file
+src/cpu_usage_reader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/monitor.dir/build.make CMakeFiles/monitor.dir/src/cpu_usage_reader.cpp.i
+.PHONY : src/cpu_usage_reader.cpp.i
+
+src/cpu_usage_reader.s: src/cpu_usage_reader.cpp.s
+
+.PHONY : src/cpu_usage_reader.s
+
+# target to generate assembly for a file
+src/cpu_usage_reader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/monitor.dir/build.make CMakeFiles/monitor.dir/src/cpu_usage_reader.cpp.s
+.PHONY : src/cpu_usage_reader.cpp.s
+
 src/format.o: src/format.cpp.o
 
 .PHONY : src/format.o
@@ -341,6 +368,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... monitor"
+	@echo "... src/cpu_usage_reader.o"
+	@echo "... src/cpu_usage_reader.i"
+	@echo "... src/cpu_usage_reader.s"
 	@echo "... src/format.o"
 	@echo "... src/format.i"
 	@echo "... src/format.s"

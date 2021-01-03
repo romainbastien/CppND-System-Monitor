@@ -1,1 +1,4 @@
-CMakeLists.txt not found in /Users/romainbastien/UdacityProjects/C++/CppND-System-Monitor Select CMakeLists.txt
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/romainbastien/UdacityProjects/C++/CppND-System-Monitor
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/romainbastien/UdacityProjects/C++/CppND-System-Monitor/cmake-build-debug

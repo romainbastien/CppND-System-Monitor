@@ -13,32 +13,37 @@ using std::vector;
 
 Process::Process(int pid) {
   pid_ = pid;
+  command_ = LinuxParser::Command(pid_);
+  ram_ = LinuxParser::Ram(pid_);
+  user_ = LinuxParser::User(pid_);
+  uptime_ = LinuxParser::UpTime(pid_);
 }
 
 int Process::Pid() { return pid_; }
 
-// TODO: Return this process's CPU utilization
-float Process::CpuUtilization() { return 0; }
+float Process::CpuUtilization() const {
+    return LinuxParser::ActiveJiffies(pid_);
+}
 
 
 string Process::Command() {
-  return LinuxParser::Command(pid_);
+  return command_;
 }
 
 string Process::Ram() {
-    return LinuxParser::Ram(pid_);
+    return ram_;
 }
 
 
 string Process::User() {
-  return LinuxParser::User(pid_);
+  return user_;
 }
 
 
 long int Process::UpTime() {
-  return LinuxParser::UpTime(pid_);
+  return uptime_;
 }
 
-// TODO: Overload the "less than" comparison operator for Process objects
-// REMOVE: [[maybe_unused]] once you define the function
-bool Process::operator<(Process const& a[[maybe_unused]]) const { return true; }
+bool Process::operator<(Process const& a[[maybe_unused]]) const {
+    return CpuUtilization() < a.CpuUtilization();
+}

@@ -7,6 +7,7 @@
 #include <sstream>
 #include <string>
 #include <vector>
+#include <numeric>
 
 using std::stof;
 using std::string;
@@ -104,21 +105,64 @@ long LinuxParser::UpTime() {
   return value;
 }
 
-// TODO: Read and return the number of jiffies for the system
-long LinuxParser::Jiffies() { return 0; }
+std::vector<long> LinuxParser::GetJiffies(){
+    string line;
+    long jiffies;
+    std::vector<long> jiffiesValues{};
+    ifstream fileStream(kProcDirectory + kStatFilename);
+    if(fileStream.is_open()){
+        getline(fileStream, line);
+        istringstream lineStream(line);
+        while(lineStream >> jiffies){
+            jiffiesValues.push_back(jiffies);
+        }
+    }
+    return jiffiesValues;
+}
 
-// TODO: Read and return the number of active jiffies for a PID
-// REMOVE: [[maybe_unused]] once you define the function
-long LinuxParser::ActiveJiffies(int pid[[maybe_unused]]) { return 0; }
+long LinuxParser::Jiffies() {
+    std::vector<long> jiffies = GetJiffies();
+    return std::accumulate(jiffies.begin(), jiffies.end(), 0);
+}
 
-// TODO: Read and return the number of active jiffies for the system
-long LinuxParser::ActiveJiffies() { return 0; }
 
-// TODO: Read and return the number of idle jiffies for the system
-long LinuxParser::IdleJiffies() { return 0; }
+long LinuxParser::ActiveJiffies(int pid) {
+    string line, trash;
+    long jiffies, totalJiffies{0};
+    ifstream fileStream(kProcDirectory + to_string(pid) + kStatFilename);
+    if(fileStream.is_open()){
+        getline(fileStream, line);
+        istringstream lineStream(line);
+        for(int i = 0; i < 18; i++){
+            if(i > 13){
+                lineStream >> jiffies;
+                totalJiffies += jiffies;
+            }
+            else {
+                lineStream >> trash;
+            }
+        }
+    }
+    return totalJiffies;
+}
 
-// TODO: Read and return CPU utilization
-vector<string> LinuxParser::CpuUtilization() { return {}; }
+long LinuxParser::ActiveJiffies() {
+    std::vector<long> jiffies = GetJiffies();
+    return std::accumulate(jiffies.begin(), jiffies.end(), 0) - (jiffies.at(CPUStates::kIdle_) + jiffies.at(CPUStates::kIOwait_));
+}
+
+long LinuxParser::IdleJiffies() {
+    std::vector<long> jiffies = GetJiffies();
+    return jiffies.at(CPUStates::kIdle_) + jiffies.at(CPUStates::kIOwait_);
+}
+
+vector<string> LinuxParser::CpuUtilization() {
+    vector<string> cpuUtilization{
+        to_string(Jiffies()),
+        to_string(ActiveJiffies()),
+        to_string(IdleJiffies())
+    };
+}
 
 int LinuxParser::TotalProcesses() {
   string key, line;
@@ -165,18 +209,33 @@ string LinuxParser::Command(int pid) {
   return line;
 }
 
-// TODO: Read and return the memory used by a process
-// REMOVE: [[maybe_unused]] once you define the function
-string LinuxParser::Ram(int pid[[maybe_unused]]) { return string(); }
+string LinuxParser::GetValueFromStatusFile(int pid, std::string keyName){
+    string line, key, value;
+    ifstream fileStream(kProcDirectory + to_string(pid) + kStatusFilename);
+    if (fileStream.is_open()) {
+        while (std::getline(fileStream, line)) {
+            std::istringstream lineStream(line);
+            while (lineStream >> key >> value) {
+                if (key == keyName + ":") {
+                    return value;
+                }
+            }
+        }
+    }
+    return value;
+}
 
-// TODO: Read and return the user ID associated with a process
-// REMOVE: [[maybe_unused]] once you define the function
-string LinuxParser::Uid(int pid[[maybe_unused]]) { return string(); }
+string LinuxParser::Ram(int pid) {
+    return GetValueFromStatusFile(pid, "VmSize");
+}
+
+string LinuxParser::Uid(int pid) {
+    return GetValueFromStatusFile(pid, "Uid");
+}
 
 string LinuxParser::User(int pid) {
   string uid = Uid(pid);
-  string line, key;
-  string value = "";
+  string line, key, value;
   ifstream fileStream(kPasswordPath);
   if (fileStream.is_open()) {
     while (std::getline(fileStream, line)) {
@@ -193,6 +252,21 @@ string LinuxParser::User(int pid) {
   return value;
 }
 
-// TODO: Read and return the uptime of a process
-// REMOVE: [[maybe_unused]] once you define the function
-long LinuxParser::UpTime(int pid[[maybe_unused]]) { return 0; }
+long LinuxParser::UpTime(int pid) {
+    string line, trash;
+    long time, uptime{0};
+    ifstream fileStream(kProcDirectory + to_string(pid) + kStatFilename);
+    if(fileStream.is_open()){
+        getline(fileStream, line);
+        istringstream lineStream(line);
+        for(int i = 0; i < 22; i++){
+            if(i == 21){
+                lineStream >> time;
+            }
+            else {
+                lineStream >> trash;
+            }
+        }
+    }
+    return time / sysconf(_SC_CLK_TCK);
+}
