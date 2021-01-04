@@ -11,13 +11,16 @@ float Processor::Utilization() {
     long newActive = LinuxParser::ActiveJiffies();
     long newIdle = LinuxParser::IdleJiffies();
 
-    long diffTotal = newTotal - total_;
-    long diffActive = newActive - active_;
-    long diffIdle = newIdle - idle_;
+
+    long diffTotal = newTotal > total_ ? newTotal - total_ : newTotal;
+    long diffActive = newActive > active_ ? newActive - active_ : newActive;
+    //long diffIdle = newIdle > idle_ ? newIdle - idle_ : newIdle;
 
     SetValues(newTotal, newActive, newIdle);
 
-    return float(diffActive / diffTotal) * 100;
+    auto utilization = float(diffActive) / float(diffTotal);
+
+    return utilization;
 }
 
 void Processor::SetValues(long total, long active, long idle) {
