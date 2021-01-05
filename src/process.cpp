@@ -16,7 +16,7 @@ Process::Process(int pid) {
   command_ = LinuxParser::Command(pid_);
   ram_ = LinuxParser::Ram(pid_);
   user_ = LinuxParser::User(pid_);
-  uptime_ = LinuxParser::UpTime(pid_) - LinuxParser::UpTime();
+  uptime_ = LinuxParser::UpTime() - LinuxParser::UpTime(pid_);
   long time = LinuxParser::ActiveJiffies(pid_);
   cpuUtilization_ = uptime_ > 0 ? float(time) / float(uptime_): 0;
   
